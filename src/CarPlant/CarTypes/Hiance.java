@@ -1,5 +1,6 @@
-package CarPlant;
+package CarPlant.CarTypes;
 
+import CarPlant.CarException;
 import CarPlant.CarParts.*;
 import CarPlant.CarTypes.Truck;
 

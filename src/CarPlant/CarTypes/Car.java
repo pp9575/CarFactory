@@ -38,6 +38,10 @@ public abstract class Car {
         this.fuelTank = fuelTank;
     }
 
+    public FuelTank getFuelTank() {
+        return fuelTank;
+    }
+
     public boolean isMoving() {
         return isMoving;
     }

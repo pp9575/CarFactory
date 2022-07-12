@@ -1,4 +1,4 @@
-package CarPlant;
+package CarPlant.CarTypes;
 
 import CarPlant.CarParts.*;
 import CarPlant.CarTypes.Cabrio;

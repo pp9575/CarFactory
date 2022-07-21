@@ -2,6 +2,7 @@ package CarPlant.CarTypes;
 
 import CarPlant.CarParts.*;
 import CarPlant.CarException;
+import CarPlant.Country;
 
 public abstract class Car {
 //    Для всех машин характерны следующие атрибуты: цвет, максимальная скорость, тип коробки передач (акпп, механика,
@@ -24,9 +25,14 @@ public abstract class Car {
     private Wheel[] wheels;
     private Lights lights;
     private FuelTank fuelTank;
+    private Country country;
+
+    public Country getCountry() {
+        return country;
+    }
 
     public Car(String color, int maxSpeed, TransmissionType transmission, double price,
-               Electric electric, Engine engine, Wheel[] wheels, Lights lights, FuelTank fuelTank) {
+               Electric electric, Engine engine, Wheel[] wheels, Lights lights, FuelTank fuelTank, Country country) {
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.transmission = transmission;
@@ -36,6 +42,7 @@ public abstract class Car {
         this.wheels = wheels;
         this.lights = lights;
         this.fuelTank = fuelTank;
+        this.country = country;
     }
 
     public FuelTank getFuelTank() {

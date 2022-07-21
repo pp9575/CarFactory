@@ -2,6 +2,8 @@ package CarPlant;
 
 import CarPlant.CarParts.*;
 import CarPlant.CarTypes.Camry;
+import CarPlant.CarTypes.Car;
+import CarPlant.CarTypes.Dyna;
 import CarPlant.CarTypes.Solara;
 
 public class Runner {
@@ -33,24 +35,34 @@ public class Runner {
         Fabric fabricRussia = new Fabric(Country.RUSSIA);
 
         try {
-            AssemblyLine russianLine1 = new AssemblyLine(Country.RUSSIA, fabricChina);
-        } catch (CountyFactoryNotEqualException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
+            AssemblyLine russianLine1 = new AssemblyLine(Country.CHINA, fabricChina);
             AssemblyLine russianLine2 = new AssemblyLine(Country.RUSSIA, fabricRussia);
-            Solara solara = russianLine2.createSolara("red", 15000);
-            solara.getFuelTank().setFuelCount(50);
+            Solara solara = russianLine1.createSolara("red", 15000);
 
-            try {
-                solara.start();
-            } catch (CarException e) {
-                System.out.println(e.getMessage());
+
+            Storage storage = new Storage();
+            storage.addCar(solara);
+            Car[] carsArray = new Car[700];
+            for (int i = 0; i < 200; i++) {
+                carsArray[i] = russianLine1.createCamry("yellow", 25000);
             }
-        } catch (CountyFactoryNotEqualException e) {
-            throw new RuntimeException(e);
+            for (int i = 200; i < 500; i++) {
+                carsArray[i] = russianLine2.createHiance("red", 35000);
+            }
+            storage.addCar(carsArray);
+
+            System.out.println("Количество Машин на складе " + storage.getTotalCars());
+            System.out.println("Camry на складе " + storage.countCamry());
+            System.out.println("Hiance на складе " + storage.countHiance());
+            System.out.println("Solara на складе " + storage.countSolara());
+            System.out.println(carsArray[300].getCountry());
+            System.out.println(carsArray[100].getCountry());
+
+
+            } catch (Throwable ex) {
+            System.out.println(ex.getMessage());
+
+        }
+    }
         }
 
-    }
-}

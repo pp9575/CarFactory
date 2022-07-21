@@ -38,14 +38,14 @@ public class AssemblyLine {
     public Camry createCamry(String color, double price) {
         int camryMaxSpeed = 195;
         Camry camry = new Camry(color, camryMaxSpeed, TransmissionType.AUTO, price, fabric.createElectric(),
-                fabric.createEngine(), fabric.createWheelSet(WheelRad.R17), fabric.createLights(), fabric.createFuelTank());
+                fabric.createEngine(), fabric.createWheelSet(WheelRad.R17), fabric.createLights(), fabric.createFuelTank(), getCountry());
         return camry;
     }
 
     public Solara createSolara(String color, double price) {
         int solaraMaxSpeed = 230;
         Solara solara = new Solara(color, solaraMaxSpeed, TransmissionType.ROBOT, price, fabric.createElectric(),
-                fabric.createEngine(), fabric.createWheelSet(WheelRad.R16), fabric.createLights(), fabric.createFuelTank());
+                fabric.createEngine(), fabric.createWheelSet(WheelRad.R16), fabric.createLights(), fabric.createFuelTank(), getCountry());
         return solara;
     }
 
@@ -54,7 +54,7 @@ public class AssemblyLine {
         int hianceCargoWeight = 750;
         Hiance hiance = new Hiance(color, hianceMaxSpeed, TransmissionType.MANUAL, price, fabric.createElectric(),
                 fabric.createEngine(), fabric.createWheelSet(WheelRad.R20), fabric.createLights(), fabric.createFuelTank(),
-                hianceCargoWeight);
+                hianceCargoWeight, getCountry());
         return hiance;
     }
 
@@ -63,7 +63,7 @@ public class AssemblyLine {
         int dynaCargoWeight = 1500;
         Dyna dyna = new Dyna(color, dynaMaxSpeed, TransmissionType.AUTO, price, fabric.createElectric(),
                 fabric.createEngine(), fabric.createWheelSet(WheelRad.R16), fabric.createLights(), fabric.createFuelTank(),
-                dynaCargoWeight);
+                dynaCargoWeight, getCountry());
         return dyna;
     }
 }

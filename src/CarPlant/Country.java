@@ -1,5 +1,5 @@
 package CarPlant;
 
 public enum Country {
-    RUSSIA, FINLAND, CHINA;
+    RUSSIA, FINLAND, CHINA, JAPAN;
 }

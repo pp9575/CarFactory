@@ -1,6 +1,6 @@
 package CarPlant;
 
-public class CountyFactoryNotEqualException extends Exception{
+public class CountyFactoryNotEqualException extends RuntimeException{
     public CountyFactoryNotEqualException(String message) {
         super(message);
     }

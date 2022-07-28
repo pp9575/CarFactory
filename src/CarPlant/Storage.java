@@ -93,7 +93,7 @@ public class Storage {
            throw new storageException("На складе нет Camry");
        }
        Camry isReturned = camryStorage[countCamry() - 1];
-       camryStorage[countCamry()] = null;
+       camryStorage[countCamry() - 1] = null;
        totalCars--;
        return isReturned;
     }
@@ -105,7 +105,7 @@ public class Storage {
             throw new storageException("На складе нет Dyna");
         }
         Dyna isReturned = dynaStorage[countDyna() - 1];
-        dynaStorage[countDyna()] = null;
+        dynaStorage[countDyna() - 1] = null;
         totalCars--;
         return isReturned;
     }
@@ -117,7 +117,7 @@ public class Storage {
             throw new storageException("На складе нет Solara");
         }
         Solara isReturned = solaraStorage[countSolara() - 1];
-        solaraStorage[countSolara()] = null;
+        solaraStorage[countSolara() - 1] = null;
         totalCars--;
         return isReturned;
     }
@@ -129,7 +129,7 @@ public class Storage {
             throw new storageException("На складе нет Hiance");
         }
         Hiance isReturned = hianceStorage[countHiance() - 1];
-        hianceStorage[countHiance()] = null;
+        hianceStorage[countHiance() - 1] = null;
         totalCars--;
         return isReturned;
     }

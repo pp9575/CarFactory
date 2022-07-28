@@ -45,7 +45,7 @@ public class AssemblyLine {
     public Solara createSolara(String color, double price) {
         int solaraMaxSpeed = 230;
         Solara solara = new Solara(color, solaraMaxSpeed, TransmissionType.ROBOT, price, fabric.createElectric(),
-                fabric.createEngine(), fabric.createWheelSet(WheelRad.R16), fabric.createLights(), fabric.createFuelTank(), getCountry());
+                fabric.createEngine(), fabric.createWheelSet(WheelRad.R16), fabric.createLights(), fabric.createFuelTank(), country);
         return solara;
     }
 

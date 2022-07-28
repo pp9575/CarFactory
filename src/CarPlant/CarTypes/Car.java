@@ -101,6 +101,10 @@ public abstract class Car {
             System.out.println("Фары включены");
         }
     }
+
+    public double getPrice() {
+        return price;
+    }
 }
 
 
